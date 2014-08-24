@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>iHooker Sample</title>
+    <script type="text/javascript">
+        var Klaudz = {
+            version: 1.0,
+            count: 0,
+            shout: function(message) {
+                alert("Klaudz shouts, " + message);
+                return ++this.count;
+            }
+        };
+
+        function buttonClicked() {
+            Klaudz.shout("fuck");
+            document.getElementById("message").innerHTML = "Something happened in the console.";
+        }
+    </script>
+
+    <!-- Links the iHooker.js -->
+    <script type="text/javascript" src="../iHooker.js"></script>
+    <!-- Hooking sample code -->
+    <script type="text/javascript" src="sample.js"></script>
+</head>
+<body>
+    <span>Klaudz has something to shout!</span><button onclick="buttonClicked()">Click Me!</button>
+    <br />
+    <span id="message" style="color: red;"></span>
+</body>
+</html>
